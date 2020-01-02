@@ -27,7 +27,6 @@ class TestHackRf(unittest.TestCase):
 
     def test_get_board_serial_number(self):
         result = self.hackrf.get_board_serial_number()
-        print(result)
         self.assertTrue(len(result) == 4)
 
 
@@ -35,60 +34,30 @@ class TestHackRf(unittest.TestCase):
         result = self.hackrf.set_baseband_filter_bandwidth(500000)
         self.assertTrue(result == Constants.SUCCESS)
 
-        result = self.hackrf.set_baseband_filter_bandwidth('ERROR')
-        self.assertTrue(result == Constants.ERROR)
-
 
     def test_set_frequency(self):
         result = self.hackrf.set_frequency(10000000)
         self.assertTrue(result == Constants.SUCCESS)
-
-        result = self.hackrf.set_frequency('ERROR')
-        self.assertTrue(result == Constants.ERROR)
 
 
     def test_set_sample_rate(self):
         result = self.hackrf.set_sample_rate(10000000, 1)
         self.assertTrue(result == Constants.SUCCESS)
 
-        result = self.hackrf.set_sample_rate('ERROR', 1)
-        self.assertTrue(result == Constants.ERROR)
-
-        result = self.hackrf.set_sample_rate(100000000, 'ERROR')
-        self.assertTrue(result == Constants.ERROR)
-
 
     def test_set_lna_gain(self):
         result = self.hackrf.set_lna_gain(14)
         self.assertTrue(result == Constants.SUCCESS)
 
-        result = self.hackrf.set_lna_gain('ERROR')
-        self.assertTrue(result == Constants.ERROR)
-
-        result = self.hackrf.set_lna_gain(100000000)
-        self.assertTrue(result == Constants.ERROR)
-
 
     def test_set_vga_gain(self):
-        result = self.hackrf.set_vga_gain(14)
+        result = self.hackrf.set_vga_gain(42)
         self.assertTrue(result == Constants.SUCCESS)
-
-        result = self.hackrf.set_vga_gain('ERROR')
-        self.assertTrue(result == Constants.ERROR)
-
-        result = self.hackrf.set_vga_gain(100000000)
-        self.assertTrue(result == Constants.ERROR)
 
 
     def test_set_txvga_gain(self):
         result = self.hackrf.set_txvga_gain(14)
         self.assertTrue(result == Constants.SUCCESS)
-
-        result = self.hackrf.set_txvga_gain('ERROR')
-        self.assertTrue(result == Constants.ERROR)
-
-        result = self.hackrf.set_txvga_gain(100000000)
-        self.assertTrue(result == Constants.ERROR)
 
 
     def test_disable_amp(self):
