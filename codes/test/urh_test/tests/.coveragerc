@@ -1,0 +1,41 @@
+[run]
+omit = 
+       src/urh/tests/*
+       */__init__.py
+       src/urh/cythonext/*
+       src/urh/dev/*
+       src/urh/ui/xtra_icons_rc.py
+       src/urh/main.py
+       src/urh/util/Errors.py
+       src/urh/plugins/RfCat/RfCatPlugin.py
+
+concurrency = multiprocessing
+source = src/urh
+
+[report]
+sort = Miss
+exclude_lines =
+    pragma: no cover
+    def paint
+    def draw_indicator
+    def mousePressEvent
+    def mouseMoveEvent
+    def mouseReleaseEvent
+    def contextMenuEvent
+    def on_import_samples_from_csv_action_triggered
+    def show_open_dialog
+    def on_btn_choose_python2_interpreter_clicked
+    def on_btn_choose_gnuradio_directory_clicked
+    def on_new_project_action_triggered
+    def on_label_non_project_mode_link_activated
+    raise NotImplementedError
+    class SectionItemDelegate
+    class SectionComboBox
+    def createEditor
+    def updateEditorGeometry
+    def on_export_fta_wanted
+    def export_to_fta
+    def export_demodulated
+    def main
+    class DeviceOptionsTableModel
+    if __name__ == "__main__"
