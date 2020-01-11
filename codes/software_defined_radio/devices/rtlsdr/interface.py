@@ -1,4 +1,5 @@
 # from urh.dev.native.lib import rtlsdr
+# https://github.com/steve-m/librtlsdr
 
 
 class rtlsdr:
